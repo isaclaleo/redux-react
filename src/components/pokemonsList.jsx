@@ -8,7 +8,9 @@ const PokemonsList = ( { pokemons }) => {
                 return <PokemonCard 
                 name={pokemon.name} 
                 key={pokemon.name}
-                image={pokemon.sprites.front_default}/>
+                image={pokemon.sprites.front_default}
+                types={pokemon.types}
+                id={pokemon.id} />
             })}
         </div>
     );
