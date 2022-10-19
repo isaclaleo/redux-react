@@ -2,8 +2,8 @@ import { Card } from "antd";
 import Meta from "antd/lib/card/Meta";
 import StarButton from "./starbutton";
 import { useDispatch } from "react-redux";
-import { setFavorite } from "../actions";
 import  './pokemonList.css';
+import { setFavorite } from "../slices/dataSlice";
 
 
 
