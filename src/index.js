@@ -10,7 +10,7 @@ import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const composeAlt = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+const composeAlt =  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const composedEnhancers = composeAlt(applyMiddleware(thunk, logger));
 
