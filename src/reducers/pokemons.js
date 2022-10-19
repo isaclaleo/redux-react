@@ -3,7 +3,6 @@ import { SET_FAVORITE,  SET_POKEMONS } from "../actions/types";
 
 const initialstate = fromJS({
     pokemons: [],
-    loading: false,
 });
 
 export const pokemonsReducers = ( state = initialstate, action) => {
@@ -24,8 +23,6 @@ export const pokemonsReducers = ( state = initialstate, action) => {
 
             return state.setIn(['pokemons', CurrentPokemonIndex, 'favorite'], !isfavorite);
 
-            // case SET_LOADING: 
-            // return { ...state, loading: action.payload};
         default:
             return state;
     }
