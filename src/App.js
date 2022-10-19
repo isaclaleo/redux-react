@@ -14,8 +14,8 @@ function App() {
 
   const pokemons = useSelector((state)  =>  state.data.pokemons,  shallowEqual);
 
-  // const loading = useSelector((state) =>  state.ui.loading);
-  const loading = false;
+  const loading = useSelector((state) =>  state.ui.loading);
+  // const loading = false;
   const dispatch = useDispatch();
 
   useEffect(() => {
