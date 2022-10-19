@@ -3,34 +3,22 @@ import Searcher from './components/Seracher';
 import PokemonsList from './components/pokemonsList';
 import logo from './statics/logo.svg';
 import { useEffect} from 'react';
-import { getPokemon } from './api';
-import { getpokemonWDatails, setloading } from './actions';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { fecthPokemonsWdatails } from './slices/dataSlice';
 import './App.css';
+
 
 
 
 function App() {
 
-  const pokemons = useSelector((state)  => state.getIn(['data', 'pokemons'], shallowEqual)).toJS();
-  const loading = useSelector((state) => state.getIn(['ui', 'loading']));
+  const pokemons = useSelector((state)  => state.data.pokemons, shallowEqual);
+  const loading = useSelector((state) => state.ui.loading);
   const dispatch = useDispatch();
 
-  // const [ pokemons, setPokemons] = useState([]);
-
   useEffect(() => {
-    const fecthPokemon = async() => {
-      dispatch(setloading(true));
-      const pokemonsRes=  await getPokemon();
-      dispatch(getpokemonWDatails(pokemonsRes));
-      dispatch(setloading(false))
-    };
-
-    fecthPokemon();
+    dispatch(fecthPokemonsWdatails())
   }, [dispatch]);
-
-
-
 
   return (
     <div className="App">
