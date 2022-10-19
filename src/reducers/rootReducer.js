@@ -1,11 +1,9 @@
-import { combineReducers } from "redux-immutable";
-import dataReducer from "../slices/dataSlice";
-import uiReducer from '../slices/uiSlice';
-
+import { combineReducers } from "redux";
+import dataReducer from '../slices/dataSlice'
 
 const rootReducer = combineReducers({
     data: dataReducer,
-    ui: uiReducer,
+    // ui: uiReducer,
 });
 
 export default rootReducer;

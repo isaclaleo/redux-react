@@ -4,20 +4,22 @@ import PokemonsList from './components/pokemonsList';
 import logo from './statics/logo.svg';
 import { useEffect} from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { fecthPokemonsWdatails } from './slices/dataSlice';
 import './App.css';
+import { fecthPokemonsWdatails } from './slices/dataSlice';
 
 
 
 
 function App() {
 
-  const pokemons = useSelector((state)  => state.data.pokemons, shallowEqual);
-  const loading = useSelector((state) => state.ui.loading);
+  const pokemons = useSelector((state)  =>  state.data.pokemons,  shallowEqual);
+
+  // const loading = useSelector((state) =>  state.ui.loading);
+  const loading = false;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fecthPokemonsWdatails())
+    dispatch(fecthPokemonsWdatails());
   }, [dispatch]);
 
   return (
